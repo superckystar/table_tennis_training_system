@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录 - 乒乓培训机构管理系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+            .login-container:hover {
+                transform: translateY(-5px);
+            }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.8rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+            input:focus,
+            select:focus {
+                outline: none;
+                border-color: #3498db;
+                box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+            }
+
+        select {
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="%23757575" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.8rem center/15px 15px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+            input[type="submit"]:hover {
+                background: #2980b9;
+                transform: scale(0.98);
+            }
+
+            input[type="submit"]:active {
+                transform: scale(0.95);
+            }
+
+        @media (max-width: 480px) {
+            .login-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+            .register-link a {
+                color: #3498db;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+                .register-link a:hover {
+                    color: #2980b9;
+                }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>乒乓培训机构管理系统</h2>
+        <form action="login_t.php" method="post">
+            <div class="form-group">
+                <label>用户名：</label>
+                <input type="text" name="username" required placeholder="请输入用户名">
+            </div>
+
+            <div class="form-group">
+                <label>密码：</label>
+                <input type="password" name="password" required placeholder="请输入密码">
+            </div>
+
+            <div class="form-group">
+                <label>角色：</label>
+                <select name="role">
+                    <option value="student">学员</option>
+                    <option value="teacher">教练</option>
+                    <option value="admin">管理员</option>
+                    <option value="superadmin">超级管理员</option>
+                </select>
+            </div>
+
+            <input type="submit" value="立即登录">
+            <div class="register-link">
+                <p>没有账号？ <a href="register_t.html">立即注册</a></p>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

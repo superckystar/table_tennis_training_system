@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择注册角色</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .register-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.8rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+            select:focus {
+                outline: none;
+                border-color: #3498db;
+                box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+            }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 1rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+            input[type="button"]:hover {
+                background: #2980b9;
+                transform: scale(0.98);
+            }
+
+            input[type="button"]:active {
+                transform: scale(0.95);
+            }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+            .back-link a {
+                color: #3498db;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+                .back-link a:hover {
+                    color: #2980b9;
+                }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>选择注册角色</h2>
+        <div class="form-group">
+            <label for="role">请选择角色：</label>
+            <select id="role">
+                <option value="student">学员</option>
+                <option value="teacher">教练</option>
+            </select>
+        </div>
+
+        <input type="button" value="立即注册" onclick="redirectToRegister()">
+
+        <div class="back-link">
+            <p>已经有账号？ <a href="login_t.html">立即登录</a></p>
+        </div>
+    </div>
+
+    <script>
+        function redirectToRegister() {
+            var role = document.getElementById('role').value;
+
+            if (role === 'teacher') {
+                // 如果选择了教练，跳转到教练注册页面
+                window.location.href = 'coaches_register.php';
+            } else {
+                // 如果选择了学员，跳转到学员注册页面
+                window.location.href = 'students_register.php';
+            }
+        }
+    </script>
+</body>
+</html>

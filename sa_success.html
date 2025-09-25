@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>超级管理员 - 乒乓培训机构管理系统</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei",Arial;
+            background: linear-gradient(135deg, #dfe9f3, #ffffff);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 容器 */
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* 标题 */
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        /* 按钮样式 */
+        button, .btn {
+            width: 100%;
+            padding: 16px 0;
+            margin: 12px 0;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg,#4facfe,#00f2fe);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            button:hover, .btn:hover {
+                background: linear-gradient(135deg,#43e97b,#38f9d7);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+
+        /* 退出登录按钮 */
+        .logout-btn {
+            background: #e74c3c;
+        }
+
+            .logout-btn:hover {
+                background: #c0392b;
+            }
+
+        /* 注释文字 */
+        .note {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: -8px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>超级管理员控制台</h2>
+
+        <!-- 审核教练 -->
+        <a href="review_coaches.php" class="btn">以管理员身份审核教练</a>
+        <div class="note">超级管理员可以执行普通管理员权限</div>
+
+        <!-- 管理学员 -->
+        <a href="manage_students.php" class="btn">以管理员身份管理学员</a>
+        <div class="note">修改学员信息、分配教练等操作</div>
+
+        <!-- 管理教练 -->
+        <a href="manage_coaches.php" class="btn">以管理员身份管理教练</a>
+        <div class="note">修改教练信息、分配课程等操作</div>
+
+        <!-- 校区管理 -->
+        <a href="manage_campus.php" class="btn">校区管理</a>
+
+        <!-- 球桌管理 -->
+        <a href="manage_courts.php" class="btn">球桌管理</a>
+        <div class="note">管理各校区球桌数量，可增减球桌</div>
+
+        <!-- 管理全校区预约 -->
+        <a href="manage_all_appointments.php" class="btn">预约管理</a>
+
+        <!-- 管理管理员 -->
+        <a href="manage_admins.php" class="btn">管理管理员</a>
+
+        <!-- 退出登录 -->
+        <a href="logout.php" class="btn logout-btn">退出登录</a>
+    </div>
+</body>
+</html>
